@@ -71,7 +71,15 @@ export default function CartPage() {
                             </span>
                         </div>
 
-                        <Button size="lg" className="w-full gap-2 mt-4">
+                        <Button
+                            size="lg"
+                            className="w-full gap-2 mt-4"
+                            onClick={() => {
+                                alert(`주문이 접수되었습니다!\n총 금액: ${totalPrice.toLocaleString()}원\n\n감사합니다. 30분 이내에 신선하게 준비해드리겠습니다!`);
+                                clearCart();
+                                router.push('/');
+                            }}
+                        >
                             주문하기
                             <ArrowRight className="h-4 w-4" />
                         </Button>
