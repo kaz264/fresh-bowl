@@ -54,9 +54,11 @@ export default async function HomePage() {
                   <ArrowRight className="h-5 w-5" />
                 </Button>
               </Link>
-              <Button size="lg" variant="outline" className="text-lg px-8">
-                AI 추천 받기
-              </Button>
+              <Link href="#ai-recommendation">
+                <Button size="lg" variant="outline" className="text-lg px-8">
+                  AI 추천 받기
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -66,7 +68,7 @@ export default async function HomePage() {
       </section>
 
       {/* AI Recommendation Section */}
-      <section className="py-16 bg-white">
+      <section id="ai-recommendation" className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto">
             <div className="text-center mb-8">
