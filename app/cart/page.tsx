@@ -9,7 +9,7 @@ import { useCart } from '@/hooks/useCart';
 
 export default function CartPage() {
     const router = useRouter();
-    const { items, getTotalPrice, clearCart } = useCart();
+    const { items, getTotalPrice } = useCart();
     const totalPrice = getTotalPrice();
 
     if (items.length === 0) {

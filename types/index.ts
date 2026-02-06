@@ -1,15 +1,14 @@
-export interface Product {
+import type { Database } from './database.types';
+
+export type Product = Database['public']['Tables']['products']['Row'];
+export type Order = Database['public']['Tables']['orders']['Row'];
+
+export interface CartItem {
   id: string;
   name: string;
-  description: string;
   price: number;
-  image_url: string;
-  category: string;
-  calories: number;
-  protein: number;
-  carbs: number;
-  fat: number;
-  created_at?: string;
+  quantity: number;
+  image_url?: string;
 }
 
 export interface NutritionInfo {
@@ -17,30 +16,18 @@ export interface NutritionInfo {
   protein: number;
   carbs: number;
   fat: number;
-}
-
-export interface CartItem {
-  id: string;
-  product: Product;
-  quantity: number;
-}
-
-export interface Order {
-  id: string;
-  user_id: string;
-  total_price: number;
-  status: 'pending' | 'confirmed' | 'delivered';
-  items: CartItem[];
-  created_at: string;
+  fiber?: number;
+  vitamins?: number;
 }
 
 export interface User {
   id: string;
   email: string;
-  full_name?: string;
+  name?: string;
 }
 
 export interface AIRecommendation {
-  productId: string;
+  product: Product;
   reason: string;
+  matchScore: number;
 }

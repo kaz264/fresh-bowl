@@ -27,14 +27,22 @@ CREATE TABLE IF NOT EXISTS cart_items (
   created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 );
 
--- Orders Table
+-- Orders Table (토스페이먼츠 통합)
 CREATE TABLE IF NOT EXISTS orders (
   id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
-  user_id UUID NOT NULL,
-  total_price DECIMAL(10, 2) NOT NULL,
-  status VARCHAR(50) DEFAULT 'pending',
-  items JSONB,
-  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+  user_id UUID REFERENCES auth.users(id),
+  order_number TEXT UNIQUE NOT NULL,
+  total_amount INTEGER NOT NULL,
+  payment_status VARCHAR(50) DEFAULT 'pending',
+  payment_key TEXT,
+  payment_method TEXT,
+  order_items JSONB NOT NULL,
+  customer_name TEXT,
+  customer_email TEXT,
+  customer_phone TEXT,
+  delivery_address TEXT,
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+  updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 );
 
 -- Sample Data Insert

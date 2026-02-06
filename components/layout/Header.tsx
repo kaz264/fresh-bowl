@@ -32,6 +32,11 @@ export function Header() {
                     <Link href="/contact" className="text-sm font-medium hover:text-primary transition-colors">
                         문의
                     </Link>
+                    {user && (
+                        <Link href="/orders" className="text-sm font-medium hover:text-primary transition-colors">
+                            주문내역
+                        </Link>
+                    )}
                 </nav>
 
                 <div className="flex items-center gap-3">
