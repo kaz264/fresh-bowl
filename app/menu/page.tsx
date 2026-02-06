@@ -1,5 +1,6 @@
 import { createClient } from '@/lib/supabase/server';
 import { ProductGrid } from '@/components/product/ProductGrid';
+import { Suspense } from 'react';
 
 export default async function MenuPage() {
     const supabase = await createClient();
@@ -18,13 +19,9 @@ export default async function MenuPage() {
                 </p>
             </div>
 
-            {products && products.length > 0 ? (
-                <ProductGrid products={products} />
-            ) : (
-                <div className="text-center py-16">
-                    <p className="text-muted-foreground">상품이 준비 중입니다.</p>
-                </div>
-            )}
+            <Suspense fallback={<div className="text-center py-16">로딩 중...</div>}>
+                <ProductGrid products={products || []} />
+            </Suspense>
         </div>
     );
 }

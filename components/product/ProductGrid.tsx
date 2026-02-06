@@ -1,6 +1,7 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { Product } from '@/types';
 import { ProductCard } from './ProductCard';
 import { cn } from '@/lib/utils';
@@ -20,7 +21,34 @@ const CATEGORIES: { id: Category; label: string }[] = [
 ];
 
 export function ProductGrid({ products }: ProductGridProps) {
-    const [selectedCategory, setSelectedCategory] = useState<Category>('ALL');
+    const router = useRouter();
+    const searchParams = useSearchParams();
+
+    // URL 쿼리 파라미터에서 초기값 읽기, 없으면 'ALL'
+    const initialCategory = (searchParams.get('category')?.toUpperCase() as Category) || 'ALL';
+    // 유효한 카테고리인지 검증 (이상한 값이면 'ALL')
+    const validCategory = CATEGORIES.some(c => c.id === initialCategory) ? initialCategory : 'ALL';
+
+    const [selectedCategory, setSelectedCategory] = useState<Category>(validCategory);
+
+    // URL이 변경되면 상태 업데이트 (뒤로가기 등 지원)
+    useEffect(() => {
+        const categoryFromUrl = (searchParams.get('category')?.toUpperCase() as Category) || 'ALL';
+        if (CATEGORIES.some(c => c.id === categoryFromUrl)) {
+            setSelectedCategory(categoryFromUrl);
+        } else {
+            setSelectedCategory('ALL');
+        }
+    }, [searchParams]);
+
+    const handleCategoryChange = (category: Category) => {
+        setSelectedCategory(category);
+        if (category === 'ALL') {
+            router.push('/menu', { scroll: false });
+        } else {
+            router.push(`/menu?category=${category.toLowerCase()}`, { scroll: false });
+        }
+    };
 
     const filteredProducts = products.filter((product) => {
         if (selectedCategory === 'ALL') return true;
@@ -30,12 +58,11 @@ export function ProductGrid({ products }: ProductGridProps) {
 
     return (
         <div className="space-y-8">
-            {/* Category Tabs */}
             <div className="flex flex-wrap justify-center gap-2">
                 {CATEGORIES.map((category) => (
                     <button
                         key={category.id}
-                        onClick={() => setSelectedCategory(category.id)}
+                        onClick={() => handleCategoryChange(category.id)}
                         className={cn(
                             "px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-300",
                             selectedCategory === category.id
