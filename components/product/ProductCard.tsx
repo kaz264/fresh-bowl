@@ -26,7 +26,7 @@ export function ProductCard({ product }: ProductCardProps) {
             <Card className="group overflow-hidden hover:shadow-xl transition-all duration-300 h-full">
                 <div className="relative h-64 overflow-hidden bg-gray-100">
                     <Image
-                        src={product.image_url}
+                        src={product.image_url ?? 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&q=80'}
                         alt={product.name}
                         fill
                         className="object-cover group-hover:scale-110 transition-transform duration-500"

@@ -17,7 +17,7 @@ export function CartItem({ item }: CartItemProps) {
         <div className="flex gap-4 p-4 bg-white rounded-lg border">
             <div className="relative w-24 h-24 rounded-lg overflow-hidden bg-gray-100 flex-shrink-0">
                 <Image
-                    src={item.product.image_url}
+                    src={item.product.image_url ?? 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&q=80'}
                     alt={item.product.name}
                     fill
                     className="object-cover"

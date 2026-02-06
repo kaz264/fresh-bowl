@@ -21,7 +21,7 @@ export async function POST(request: Request) {
                 'X-Title': 'Fresh Bowl',
             },
             body: JSON.stringify({
-                model: 'anthropic/claude-3.5-sonnet',
+                model: 'openai/gpt-4o-mini',
                 messages: [
                     {
                         role: 'user',
