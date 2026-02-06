@@ -42,7 +42,7 @@ export async function POST(request: NextRequest) {
         const paymentData = await response.json();
 
         // Supabase에 주문 저장
-        const supabase = createClient();
+        const supabase = await createClient();
         const { data: { user } } = await supabase.auth.getUser();
 
         const { error: dbError } = await supabase

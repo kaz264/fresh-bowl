@@ -84,7 +84,7 @@ export default function ProductDetailPage() {
                 {/* 이미지 */}
                 <div className="relative h-[500px] rounded-2xl overflow-hidden bg-gray-100">
                     <Image
-                        src={product.image_url}
+                        src={product.image_url || 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&q=80'} // Fallback image
                         alt={product.name}
                         fill
                         className="object-cover"
@@ -113,10 +113,10 @@ export default function ProductDetailPage() {
 
                         <NutritionChart
                             nutrition={{
-                                calories: product.calories,
-                                protein: product.protein,
-                                carbs: product.carbs,
-                                fat: product.fat,
+                                calories: product.calories ?? 0,
+                                protein: product.protein ?? 0,
+                                carbs: product.carbs ?? 0,
+                                fat: product.fat ?? 0,
                             }}
                         />
 

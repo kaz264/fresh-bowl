@@ -118,8 +118,8 @@ export default function OrdersPage() {
                                     <div className="flex items-center justify-between">
                                         <div>
                                             <span className={`inline-block px-3 py-1 rounded-full text-sm ${order.payment_status === 'completed'
-                                                    ? 'bg-green-100 text-green-700'
-                                                    : 'bg-yellow-100 text-yellow-700'
+                                                ? 'bg-green-100 text-green-700'
+                                                : 'bg-yellow-100 text-yellow-700'
                                                 }`}>
                                                 {order.payment_status === 'completed' ? '결제완료' : '대기중'}
                                             </span>
