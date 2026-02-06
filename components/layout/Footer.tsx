@@ -55,14 +55,14 @@ export function Footer() {
 
                 <div className="mt-8 pt-8 border-t">
                     <div className="text-center text-sm text-muted-foreground space-y-2">
-                        <p><strong>Farm360.ai</strong> | AI 기반 지능형 수직 농업</p>
+                        <p><strong>Fresh Bowl</strong> | 신선함이 가득한 프리미엄 샐러드</p>
                         <p>경기도 성남시 분당구 판교역로 136 B2073호</p>
                         <p>
-                            <a href="mailto:contact@farm360.ai" className="hover:text-primary">contact@farm360.ai</a>
+                            <a href="mailto:hello@freshbowl.ai" className="hover:text-primary">hello@freshbowl.ai</a>
                             {' '} | {' '}
-                            <a href="https://www.farm360.ai/" target="_blank" rel="noopener noreferrer" className="hover:text-primary">www.farm360.ai</a>
+                            <a href="https://www.freshbowl.ai/" target="_blank" rel="noopener noreferrer" className="hover:text-primary">www.freshbowl.ai</a>
                         </p>
-                        <p className="mt-4">© 2026 Farm360.ai. All rights reserved.</p>
+                        <p className="mt-4">© 2026 Fresh Bowl. All rights reserved.</p>
                     </div>
                 </div>
             </div>

@@ -91,8 +91,8 @@ export default function ContactPage() {
                     <div className="p-6 bg-green-50 rounded-lg">
                         <Mail className="h-6 w-6 text-primary mb-2" />
                         <h3 className="font-semibold mb-1">이메일</h3>
-                        <a href="mailto:contact@farm360.ai" className="text-gray-600 hover:text-primary">
-                            contact@farm360.ai
+                        <a href="mailto:hello@freshbowl.ai" className="text-gray-600 hover:text-primary">
+                            hello@freshbowl.ai
                         </a>
                     </div>
 

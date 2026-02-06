@@ -3,7 +3,7 @@ export default function AboutPage() {
         <div className="container mx-auto px-4 py-12">
             <div className="max-w-4xl mx-auto">
                 <div className="mb-8 text-center">
-                    <h1 className="text-4xl font-bold mb-4">Farm360.ai</h1>
+                    <h1 className="text-4xl font-bold mb-4">Fresh Bowl</h1>
                     <p className="text-xl text-gray-600">AI 기반 지능형 수직 농업 × 프리미엄 샐러드</p>
                 </div>
 
@@ -11,14 +11,14 @@ export default function AboutPage() {
                     <section className="mb-12 bg-gradient-to-r from-green-50 to-blue-50 p-8 rounded-xl">
                         <h2 className="text-2xl font-semibold mb-4 text-green-700">우리의 미션</h2>
                         <p className="text-gray-700 leading-relaxed text-lg">
-                            Farm360.ai는 <strong>AI 자동화 기술과 혁신적인 수직 농업</strong>을 통해
+                            Fresh Bowl은 <strong>신선함과 건강함</strong>을 최우선으로 생각하며
                             지속 가능한 식량 생산을 실현합니다. Fresh Bowl은 우리 농장에서 직접 재배한
-                            무농약, 고품질 채소로 만든 프리미엄 샐러드를 제공하는 Farm360.ai의 B2C 브랜드입니다.
+                            가장 맛있는 프리미엄 샐러드를 제공하는 브랜드입니다.
                         </p>
                     </section>
 
                     <section className="mb-12">
-                        <h2 className="text-2xl font-semibold mb-6 text-primary">Farm360.ai 기술 혁신</h2>
+                        <h2 className="text-2xl font-semibold mb-6 text-primary">Fresh Bowl 이야기</h2>
                         <div className="grid md:grid-cols-2 gap-6">
                             <div className="p-6 bg-white border-2 border-green-100 rounded-lg shadow-sm">
                                 <div className="text-3xl font-bold text-green-600 mb-2">2~4배</div>
@@ -97,10 +97,10 @@ export default function AboutPage() {
                     <section>
                         <h2 className="text-2xl font-semibold mb-4 text-primary">연락처</h2>
                         <div className="space-y-2 text-gray-700">
-                            <p><strong>회사명:</strong> Farm360.ai</p>
-                            <p><strong>이메일:</strong> contact@farm360.ai</p>
+                            <p><strong>회사명:</strong> Fresh Bowl</p>
+                            <p><strong>이메일:</strong> hello@freshbowl.ai</p>
                             <p><strong>주소:</strong> 경기도 성남시 분당구 판교역로 136 B2073호</p>
-                            <p><strong>웹사이트:</strong> <a href="https://www.farm360.ai/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">www.farm360.ai</a></p>
+                            <p><strong>웹사이트:</strong> <a href="https://www.freshbowl.ai/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">www.freshbowl.ai</a></p>
                         </div>
                     </section>
                 </div>
