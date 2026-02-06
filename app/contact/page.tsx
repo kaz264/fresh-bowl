@@ -21,6 +21,11 @@ export default function ContactPage() {
         setFormData({ name: '', email: '', subject: '', message: '' });
     };
 
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        const { id, value } = e.target;
+        setFormData(prev => ({ ...prev, [id]: value }));
+    };
+
     return (
         <div className="container mx-auto px-4 py-12">
             <div className="max-w-2xl mx-auto">
@@ -38,7 +43,7 @@ export default function ContactPage() {
                             id="name"
                             type="text"
                             value={formData.name}
-                            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                            onChange={handleChange}
                             required
                         />
                     </div>
@@ -51,7 +56,7 @@ export default function ContactPage() {
                             id="email"
                             type="email"
                             value={formData.email}
-                            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                            onChange={handleChange}
                             required
                         />
                     </div>
@@ -64,7 +69,7 @@ export default function ContactPage() {
                             id="subject"
                             type="text"
                             value={formData.subject}
-                            onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
+                            onChange={handleChange}
                             required
                         />
                     </div>
@@ -77,7 +82,7 @@ export default function ContactPage() {
                             id="message"
                             rows={6}
                             value={formData.message}
-                            onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                            onChange={handleChange}
                             required
                         />
                     </div>
