@@ -52,8 +52,8 @@ export default function CheckoutPage() {
                 amount: totalPrice,
                 orderId: orderId,
                 orderName: items.length > 1
-                    ? `${items[0].name} 외 ${items.length - 1}건`
-                    : items[0].name,
+                    ? `${items[0].product.name} 외 ${items.length - 1}건`
+                    : items[0].product.name,
                 customerName: customerInfo.name,
                 customerEmail: customerInfo.email,
                 customerMobilePhone: customerInfo.phone,
@@ -145,11 +145,11 @@ export default function CheckoutPage() {
                             {items.map((item) => (
                                 <div key={item.id} className="flex justify-between text-sm">
                                     <div>
-                                        <div className="font-medium">{item.name}</div>
+                                        <div className="font-medium">{item.product.name}</div>
                                         <div className="text-muted-foreground">수량: {item.quantity}</div>
                                     </div>
                                     <div className="font-medium">
-                                        {(item.price * item.quantity).toLocaleString()}원
+                                        {(item.product.price * item.quantity).toLocaleString()}원
                                     </div>
                                 </div>
                             ))}

@@ -31,10 +31,8 @@ export interface Order {
 
 export interface CartItem {
   id: string;
-  name: string;
-  price: number;
+  product: Product;
   quantity: number;
-  image_url?: string;
 }
 
 export interface NutritionInfo {
