@@ -1,7 +1,33 @@
-import type { Database } from './database.types';
+export interface Product {
+  id: string;
+  name: string;
+  description: string | null;
+  price: number;
+  image_url: string | null;
+  category: string | null;
+  calories: number | null;
+  protein: number | null;
+  carbs: number | null;
+  fat: number | null;
+  created_at: string;
+}
 
-export type Product = Database['public']['Tables']['products']['Row'];
-export type Order = Database['public']['Tables']['orders']['Row'];
+export interface Order {
+  id: string;
+  user_id: string | null;
+  order_number: string;
+  total_amount: number;
+  payment_status: string;
+  payment_key: string | null;
+  payment_method: string | null;
+  order_items: any;
+  customer_name: string | null;
+  customer_email: string | null;
+  customer_phone: string | null;
+  delivery_address: string | null;
+  created_at: string;
+  updated_at: string;
+}
 
 export interface CartItem {
   id: string;
